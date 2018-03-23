@@ -1,0 +1,391 @@
+<admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Membersadmin/membersindex')}">{:L('MEMBERS_MEMBERSADMIN_INDEX')}</a></li>
+			<li class="active"><a href="{:U('Membersadmin/membersadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('MEMBERS_MEMBERSADMIN_ADD')}</a></li>
+		</ul>
+		<form action="{:U('Membersadmin/membersadd')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<div class="row-fluid">
+				<div class="span9">
+					<table class="table table-bordered">
+						<tr>
+							<th width="80">用户名</th>
+							<td>
+								<input type="text" style="width:400px;" name="post[username]"  required value="" placeholder="请输入用户名称"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th width="100">真实姓名</th>
+							<td>
+								<input type="text" style="width:400px;" name="post[realname]" required value="" placeholder="请输入真实姓名"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+
+						<tr>
+							<th width="100">密码</th>
+							<td>
+								<input type="password" style="width:400px;" name="post[password]" id="title" required value="" placeholder="请输入密码"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th>请选择地区</th>
+							<td>
+								<select name="post[state]" style="width:200px;">
+									<option>请选择地区</option>
+									<option value="1">大陆</option>
+									<option value="2">欧洲</option>
+									<option value="3">台湾</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>联系地址</th>
+							<td>
+								<input type="text" name="post[address]" style="width: 400px" placeholder="请输入联系地址">
+							</td>
+						</tr>
+
+						<tr>
+							<th>接鸽地址</th>
+							<td>
+								<input type="text" name="post[jiege_address]" style="width: 400px" placeholder="请输入接鸽地址">
+							</td>
+						</tr>
+						<tr>
+							<th>接鸽人</th>
+							<td>
+								<input type="text" name="post[jiege_name]" style="width: 400px" placeholder="请输入接鸽人">
+							</td>
+						</tr>
+						<tr>
+							<th>血统书寄送地址</th>
+							<td>
+								<input type="text" name="post[xuetong_address]" style="width: 400px" placeholder="请输入血统书寄送地址">
+							</td>
+						</tr>
+						<tr>
+							<th>血统书接受人</th>
+							<td>
+								<input type="text" name="post[xuetong_name]" style="width: 400px" placeholder="请输入血统接收人">
+							</td>
+						</tr>
+						<tr>
+							<th>邮政编码</th>
+							<td>
+								<input type="text" name="post[zipcode]" style="width: 400px" placeholder="请输入邮政编码">
+							</td>
+						</tr>
+						<tr>
+							<th>联系电话</th>
+							<td>
+								<input type="text" name="post[telephone]" style="width: 400px" placeholder="请输入电话">
+							</td>
+						</tr>
+						<tr>
+							<th>传真</th>
+							<td>
+								<input type="text" name="post[fax]" style="width: 400px" placeholder="请输入传真">
+							</td>
+						</tr>
+						<tr>
+							<th>手机号码</th>
+							<td>
+								<input type="text" name="post[mobile]" style="width: 400px" placeholder="请输入手机号码">
+							</td>
+						</tr>
+						<tr>
+							<th>邮箱</th>
+							<td>
+								<input type="text" name="post[email]" style="width: 400px" placeholder="请输入邮箱">
+							</td>
+						</tr>
+						<tr>
+							<th>QQ</th>
+							<td>
+								<input type="text" name="post[qq]" style="width: 400px" placeholder="请输入QQ">
+							</td>
+						</tr>
+
+
+					</table>
+				</div>
+				<div class="span3">
+					<table class="table table-bordered">
+
+						<tr>
+							<th><b>注册时间</b></th>
+						</tr>
+						<tr>
+							<td><input type="text" name="post[addtime]" id="start_time" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime" style="width: 160px;"></td>
+						</tr>
+						<tr>
+							<th><b>状态</b></th>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[working]" value="0" checked>未审核</label>
+								<label class="radio"><input type="radio" name="post[working]" value="1">审核</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[zhuangtai]" value="1">打开</label>
+								<label class="radio"><input type="radio" name="post[zhuangtai]" value="2" checked>关闭</label>
+								<label class="radio"><input type="radio" name="post[zhuangtai]" value="3" >冻结</label>
+							</td>
+						</tr>
+
+						<tr>
+							<th><b>性别</b></th>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[sex]" value="0" checked>男</label>
+								<label class="radio"><input type="radio" name="post[sex]" value="1">女</label>
+							</td>
+						</tr>
+
+						<tr>
+							<th><b>是否接受短信</b></th>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[ismess]" value="0" checked>否</label>
+								<label class="radio"><input type="radio" name="post[ismess]" value="1">是</label>
+							</td>
+						</tr>
+						<tr>
+							<th>积&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp分&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="post[jifen]" placeholder="请输入积分"></th>
+						</tr>
+						<tr>
+							<th>保&nbsp证&nbsp金&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="post[baojin]" placeholder="请输入保证金"></th>
+						</tr>
+						<tr>
+							<th>信用额度&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="post[credit_line]" placeholder="请输入信用额度"></th>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<div class="form-actions">
+				<input type="submit" name="" id="" value="添加财务信息">
+				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+				<a class="btn" href="{:U('Membersadmin/index')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.WEB_ROOT;
+	</script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+        /**
+         * 根据时区获取相应的时间
+         * @author hutia
+         * @param {Date} date 日期时间对象
+         * @param {number} timezone 时区
+         * @return {string} 返回时间字符串
+         */
+        function getTimeString(date, timezone){
+            var tz = date.getTimezoneOffset();
+            var dt = new Date();
+            dt.setTime(date.getTime() + tz*60000 + timezone*3600000);
+            return format(dt.getHours()) + ':' + format(dt.getMinutes()) + ':' + format(dt.getSeconds());
+            function format(n) {
+                if (n < 10) return '0' + n;
+                return ''+n;
+            }
+        }
+
+        $("#start_time").change(function(){
+//            console.log($(" #start_time ").val());
+            // 下面是使用示例
+//        var now = new Date();
+//        var now = $(" #start_time ").val();
+            var s = $(" #start_time ").val();
+            var now = new Date(Date.parse(s.replace(/-/g, "/")));
+//        var now = new Date($(" #start_time ").val().replace(/-/,"/"))
+            console.log(now);
+//        document.write('北京 ' + getTimeString(now, 8) + '');
+//        document.write('伦敦 ' + getTimeString(now, 0) + '');
+//        document.write('纽约 ' + getTimeString(now, -5) + '');
+//        document.write('东京 ' + getTimeString(now, 9) + '');
+            console.log('北京 ' + getTimeString(now, 8) + '');
+            console.log('伦敦 ' + getTimeString(now, 0) + '');
+            console.log('纽约 ' + getTimeString(now, -5) + '');
+            console.log('东京 ' + getTimeString(now, 9) + '');
+        });
+
+
+
+
+
+		$(function() {
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser && $.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+
+				var formloading = false;
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'post[title]' : {
+							required : 1
+						},
+						'post[content]' : {
+							editorcontent : true
+						}
+					},
+					//验证未通过提示消息
+					messages : {
+						'post[title]' : {
+							required : '请输入标题'
+						},
+						'post[content]' : {
+							editorcontent : '内容不能为空'
+						}
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						if (formloading)
+							return;
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+								formloading = true;
+							},
+							success : function(data, statusText, xhr, $form) {
+								formloading = false;
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '继续添加？',
+												callback : function() {
+													reloadPage(window);
+													return true;
+												},
+												focus : true
+											}, {
+												name : '返回列表页',
+												callback : function() {
+													location = "{:U('Membersadmin/membersindex')}";
+													return true;
+												}
+											} ]
+										});
+									});
+								} else {
+									artdialog_alert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

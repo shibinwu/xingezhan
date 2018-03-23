@@ -1,0 +1,16 @@
+<?php
+return array (
+  'USER_INDEXADMIN_BAN' => '拉黑会员',
+  'USER_INDEXADMIN_CANCELBAN' => '启用会员',
+  'USER_INDEXADMIN_DEFAULT1' => 'User Group',
+  'USER_INDEXADMIN_DEFAULT3' => 'Admin Group',
+  'USER_INDEXADMIN_INDEX' => 'Site Users',
+  'USER_OAUTHADMIN_DELETE' => '第三方用户解绑',
+  'USER_OAUTHADMIN_INDEX' => 'Third Party Users',
+  'USER_INDEXADMIN_DEFAULT' => 'Users',
+  'ESHOP_INDEXADMIN_INDEX' => '鸽药列表',
+  'ESHOP_INDEXADMIN_ORDERLIST' => '鸽药订单',
+  'ESHOP_INDEXADMIN_SHOWINDEX' => '展售主题',
+  'ESHOP_INDEXADMIN_SHOWLIST' => '展售订单',
+  'ESHOP_INDEXADMIN_DEFAULT' => '商店管理',
+);

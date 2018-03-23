@@ -1,0 +1,86 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a>{:L('AUCTION_ORDER_INDEX')}</a></li>
+			<li><a href="{:U('Auction/Auctionadmin/showadd')}">{:L('AUCTION_ORDER_ADD')}</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Auctionadmin/index')}">
+			{:L('STATUS')}： 
+			<select name="status" style="width: 120px;">
+				<option value=''>全部</option>
+				<option value='0' <if condition="$_REQUEST['status'] eq '0'">selected</if>>显示</option>
+				<option value='1' <if condition="$_REQUEST['status'] eq '1'">selected</if>>隐藏</option>
+			</select> &nbsp;&nbsp;
+			{:L('KEYWORD')}： 
+			<input type="text" name="keyword" style="width: 200px;" value="{$_REQUEST.keyword|default=''}" placeholder="{:L('KEYWORDS')}">
+			<input type="submit" class="btn btn-primary" value="{:L('SEARCH')}" />
+			<a class="btn btn-danger" href="{:U('Auctionadmin/index')}">{:L('CLEAR')}</a>
+		</form>
+		<form method="post" class="js-ajax-form">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th align="center">Koop</th>
+						<th>{:L('AUCTION_NAME')}</th>
+						<th>{:L('HUANHAO')}</th>
+						<th>{:L('EURO')}</th>
+						<th>{:L('RMB')}</th>
+						<th align="center">ID</th>
+						<th>{:L('LIANXIREN')}</th>
+						<th>{:L('EMAIL')}</th>
+						<th>{:L('PHONE')}</th>
+						<th>{:L('JIAOKUAN_STATUS')}</th>
+						<th>{:L('YUNSHU_STATUS')}</th>
+						<th align="center">{:L('ACTIONS')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="list" item="vo">
+					<tr>
+
+						<td>{$vo.koop}</td>
+						<td>{$vo.auctionname}</td>
+						<td>{$vo.huanhao}</td>
+						<!--if($al['gezi_sex']==1){echo "♀";}elseif($al['gezi_sex']==2){echo "♂";}-->
+						<td>{$vo.price}</td>
+						<td>{$vo.totalprice}</td>
+						<td align="center">{$vo.user_id}</td>
+						<td>{$vo.realname}</td>
+						<td>{$vo.email}</td>
+						<td>{$vo.tel}</td>
+						<td>{$vo.pay_status}</td>
+						<td>{$vo.yunshu}</td>
+						<!--<td>{$vo['names']|default=$vo['adduser']}</td>-->
+						<td align="center">
+							<a href="{:U('Auctionadmin/pmorderedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>
+							|
+							<a href="{:U('Auctionadmin/pmorderdelete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						</td>
+					</tr>
+					</foreach>
+				</tbody>
+				<thead>
+				<tr>
+					<th align="center">Koop</th>
+					<th>{:L('AUCTION_NAME')}</th>
+					<th>{:L('HUANHAO')}</th>
+					<th>{:L('EURO')}</th>
+					<th>{:L('RMB')}</th>
+					<th align="center">ID</th>
+					<th>{:L('LIANXIREN')}</th>
+					<th>{:L('EMAIL')}</th>
+					<th>{:L('PHONE')}</th>
+					<th>{:L('JIAOKUAN_STATUS')}</th>
+					<th>{:L('YUNSHU_STATUS')}</th>
+					<th align="center">{:L('ACTIONS')}</th>
+				</tr>
+				</thead>
+			</table>
+			<div class="pagination">{$page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

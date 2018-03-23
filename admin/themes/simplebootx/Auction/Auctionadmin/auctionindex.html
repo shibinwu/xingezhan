@@ -1,0 +1,102 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a>{:L('AUCTION_INDEX')}</a></li>
+			<li><a href="{:U('Auction/Auctionadmin/auctionadd')}">{:L('AUCTION_ADD')}</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Auctionadmin/auctionindex')}">
+			{:L('STATUS')}： 
+			<select name="status" style="width: 120px;">
+				<option value=''>全部</option>
+				<option value='0' <if condition="$_REQUEST['status'] eq '0'">selected</if>>显示</option>
+				<option value='1' <if condition="$_REQUEST['status'] eq '1'">selected</if>>隐藏</option>
+			</select> &nbsp;&nbsp;
+			{:L('KEYWORD')}：
+			<input type="text" name="keyword" style="width: 200px;" value="{$_REQUEST.keyword|default=''}" placeholder="{:L('KEYWORDS')}">
+			<input type="submit" class="btn btn-primary" value="{:L('SEARCH')}" />
+			<a class="btn btn-danger" href="{:U('Indexadmin/index')}">{:L('CLEAR')}</a>
+		</form>
+		<form method="post" class="js-ajax-form">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<!--<th align="center">ID</th>-->
+						<th>{:L('AUCTION_NUM')}</th>
+						<th>{:L('ORDER')}</th>
+						<th>{:L('AUCTION_NAME')}</th>
+						<th>{:L('START_TIME')}</th>
+						<th>{:L('END_TIME')}</th>
+						<th>{:L('GEZI_NUM')}</th>
+						<th>{:L('TOTAL_PRICE')}</th>
+						<th>{:L('AUCTION_SHOW')}</th>
+						<th>{:L('COMMEND')}</th>
+						<th>{:L('AUCTION_GEZI_SHOW')}</th>
+						<th align="center">{:L('ACTIONS')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="list" item="vo">
+					<tr>
+						<td align="center">{$vo.id}</td>
+						<td>{$vo.seq}</td>
+						<td>{$vo.tname}</td>
+						<td>{$vo[start_time] | date='Y-m-d H:i:s',###}</td>
+						<td>{$vo[end_time] | date='Y-m-d H:i:s',###}</td>
+						<td>{$vo.nums}只</td>
+						<td>{$vo.totals}</td>
+						<!--<td>{$vo['name']|default=$vo['created_by']}</td>-->
+						<td>
+							<if condition="$vo.cn_show eq 1">
+								<a data-toggle="tooltip" title="显示"><i class="fa fa-check"></i></a>
+								<else/>
+								<a data-toggle="tooltip" title="隐藏"><i class="fa fa-close"></i></a>
+							</if>
+						</td>
+						<td>
+						<if condition="$vo.tuijian eq 1">
+							<a data-toggle="tooltip" title="推荐"><i class="fa fa-check"></i></a>
+							<else/>
+							<a data-toggle="tooltip" title="不推荐"><i class="fa fa-close"></i></a>
+						</if>
+						</td>
+
+						<td>
+						<if condition="$vo.hiden eq 0">
+							<a data-toggle="tooltip" title="显示"><i class="fa fa-check"></i></a>
+							<else/>
+							<a data-toggle="tooltip" title="隐藏"><i class="fa fa-close"></i></a>
+						</if>
+						</td>
+						<td align="center">
+							<a href="{:U('Auctionadmin/auctionedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>
+							|
+							<a href="{:U('Auctionadmin/auctiondelete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						</td>
+					</tr>
+					</foreach>
+				</tbody>
+				<thead>
+				<tr>
+					<!--<th align="center">ID</th>-->
+					<th>{:L('AUCTION_NUM')}</th>
+					<th>{:L('ORDER')}</th>
+					<th>{:L('AUCTION_NAME')}</th>
+					<th>{:L('START_TIME')}</th>
+					<th>{:L('END_TIME')}</th>
+					<th>{:L('GEZI_NUM')}</th>
+					<th>{:L('TOTAL_PRICE')}</th>
+					<th>{:L('AUCTION_SHOW')}</th>
+					<th>{:L('COMMEND')}</th>
+					<th>{:L('AUCTION_GEZI_SHOW')}</th>
+					<th align="center">{:L('ACTIONS')}</th>
+				</tr>
+				</thead>
+			</table>
+			<div class="pagination">{$page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>
