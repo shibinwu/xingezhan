@@ -33,7 +33,6 @@ class AuctionadminController extends AdminbaseController
     {
         $where = array();
         $request = I('request.');
-
         if (($request['status'] == '0') || ($request['status'] == 1)) {
             $where['hiden'] = $request['status'];
         }
@@ -42,7 +41,6 @@ class AuctionadminController extends AdminbaseController
             $where['title'] = array('like', "%$keyword%");
         }
         $where['l'] = LANG_SET;
-
         $count = $this->pmzt_model->where($where)->count();
         $page = $this->page($count, 20);
         $list = $this->pmzt_model
@@ -58,9 +56,7 @@ class AuctionadminController extends AdminbaseController
             $list[$k]['totals']=array_sum($nums);
 
         }
-
         $data = $this->pmproduct_model->select();
-
         $this->assign('list', $list);
         $this->assign("page", $page->show('Admin'));
 
@@ -73,7 +69,6 @@ class AuctionadminController extends AdminbaseController
         if (IS_POST) {
             $_POST['post']['pics'] = sp_asset_relative_url($_POST['smeta']['thumb']);
             $_POST['post']['adduser'] = get_current_admin_id();
-//            $_POST['post']['country'] = implode(",",array($_POST['post']['country1'],$_POST['post']['country2'],$_POST['post']['country3']));
             $_POST['post']['country'] = implode(",",array_filter(array($_POST['post']['country1'],$_POST['post']['country2'],$_POST['post']['country3'])));
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
@@ -95,10 +90,6 @@ class AuctionadminController extends AdminbaseController
             $post_id = intval($_POST['post']['id']);
             $_POST['post']['pics'] = sp_asset_relative_url($_POST['smeta']['thumb']);
             $_POST['post']['country'] = implode(",",array_filter(array($_POST['post']['country1'],$_POST['post']['country2'],$_POST['post']['country3'])));
-//            $img = new \Think\Image(); //实例化
-//            $img->open($_POST['post']['tpic']); //打开被处理的图片
-//            $img->thumb(100,100); //制作缩略图(100*100)
-//            $img->save($smallimg_path); //保存缩略图到服务器
             unset($_POST['post']['post_author']);
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
@@ -124,7 +115,6 @@ class AuctionadminController extends AdminbaseController
            }else{
                $info['country3'] =3;
            }
-
         }
         $this->assign('post', $info);
         $this->display();
@@ -141,7 +131,6 @@ class AuctionadminController extends AdminbaseController
                 $this->error("删除失败！");
             }
         }
-
         if (isset($_POST['ids'])) {
             $ids = I('post.ids/a');
 
@@ -166,7 +155,6 @@ class AuctionadminController extends AdminbaseController
             $where['title'] = array('like', "%$keyword%");
         }
         $where['l'] = LANG_SET;
-
         $count = $this->pmproduct_model->where($where)->count();
         $page = $this->page($count, 20);
         $list = $this->pmproduct_model
@@ -212,9 +200,7 @@ class AuctionadminController extends AdminbaseController
             }
             exit;
         }
-
         $info = $this->pmzt_model->getField('id,tname');
-
         $this->assign('post', $info);
         $this->display();
     }
@@ -264,7 +250,6 @@ class AuctionadminController extends AdminbaseController
                 $this->error("删除失败！");
             }
         }
-
         if (isset($_POST['ids'])) {
             $ids = I('post.ids/a');
 
@@ -318,7 +303,7 @@ class AuctionadminController extends AdminbaseController
         $this->display();
     }
 
-    // 后台拍卖专题订单列表
+    // 后台拍卖订单列表
     public function pmorderindex()
     {
         $where = array();
@@ -369,9 +354,7 @@ class AuctionadminController extends AdminbaseController
         $id = I('get.id');
         $where['id'] = $id;
         $info = $this-> pmorder_model->where($where)->find();
-//        $data = $this-> pmorder_model ->getField('id,tname');
         $this->assign('post', $info);
-//        $this->assign('data', $data);
         $this->display();
     }
 
@@ -416,7 +399,6 @@ class AuctionadminController extends AdminbaseController
             $article['content'] = htmlspecialchars_decode($article['content']);
             //删除原始的id
             array_splice($article,0,1);
-
             $article['order_sn']  = $this->get_sn();
             echo "<pre>";
             print_r($article);
@@ -440,16 +422,7 @@ class AuctionadminController extends AdminbaseController
                 ->join('lanhai_members m ON lanhai_pmjilu.uid = m.id')
                 ->field('lanhai_pmjilu.id,gid,uid,pmprice,pm.sequence,pm.title,huanhao,m.username,realname,address,email,telephone,mobile')
                 ->select();
-//        echo "<a href= >提交</a>";
-//
-//        echo "<pre>";
-//        print_r($info);
-//        die;
-
-
-//        $data = $this-> pmorder_model ->getField('id,tname');
         $this->assign('post', $info);
-//        $this->assign('data', $data);
         $this->display();
     }
 
