@@ -71,6 +71,10 @@ class AuctionadminController extends AdminbaseController
             $_POST['post']['country'] = implode(",",array_filter(array($_POST['post']['country1'],$_POST['post']['country2'],$_POST['post']['country3'])));
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
+            $t = strtotime($article['start_time']);
+            $article['en_start_time'] = $t - 28800;
+            $article['hl_start_time'] = $t - 21600;
+            dump($article['hl_start_time']);die;
             $result = $this->pmzt_model->add($article);
             if ($result) {
                 $this->success("添加成功！");
