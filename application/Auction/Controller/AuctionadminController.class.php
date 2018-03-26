@@ -307,6 +307,8 @@ class AuctionadminController extends AdminbaseController
     public function pmorderindex()
     {
         $where = array();
+        $id = I('get.id');
+        $where['cid'] = $id;
         $request = I('request.');
 
         if (($request['status'] == '0') || ($request['status'] == 1)) {

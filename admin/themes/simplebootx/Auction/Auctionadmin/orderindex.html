@@ -46,9 +46,7 @@
 						<td>{$vo.tel}</td>
 						<!--<td>{$vo['names']|default=$vo['adduser']}</td>-->
 						<td align="center">
-							<a href="{:U('Auctionadmin/showedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>
-							|
-							<a href="{:U('Auctionadmin/showdelete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+							<a href="{:U('Auctionadmin/pmorderindex',array('id'=>$vo['id']))}" >{:L('SHOW_GEZI_ORDER')}</a>
 						</td>
 					</tr>
 					</foreach>

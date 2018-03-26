@@ -42,6 +42,7 @@ return array(
         "TOTAL_PRICE_RMB" => '总金额（人民币）',
         "YUSHU" => '羽数',
         "PRINT_ORDER" => '打印订单',
+        "SHOW_GEZI_ORDER" => '查看鸽子订单',
 
         //拍卖鸽子订单
         "AUCTION_GORDER_INDEX" => '拍卖鸽子订单列表',
