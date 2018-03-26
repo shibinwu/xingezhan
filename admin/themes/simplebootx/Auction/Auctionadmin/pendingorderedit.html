@@ -22,6 +22,12 @@
 
 						<foreach name="post" item="val">
 							<input type="hidden" name="post[id]" value="{$val.id}">
+							<input type="hidden" name="post[cid]" value="{$val.cid}">
+							<input type="hidden" name="post[user_id]" value="{$val.uid}">
+							<input type="hidden" name="post[shangping_id]" value="{$val.gid}">
+							<input type="hidden" name="post[addtime]" value="{$val.pm_time}">
+							<input type="hidden" name="post[bzj]" value="{$val.baojin}">
+							<input type="hidden" name="post[end_time]" value="{$val.end_time}">
 							<!--<input type="hidden" name="post[cid]" value="{$val.cid}">-->
 							<tr>
 								<th width="120">鸽子名称</th>
@@ -44,38 +50,38 @@
 							<tr>
 								<th width="120">价格</th>
 								<td>
-									<span class="zitidaxiao">{$val.pmprice}</span>
+									<input type="text" name="post[pmprice]" id="price" value="{$val['pmprice']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>进口税费</th>
 								<td>
-									<input type="text" name="post[fwprice]" value="{$val['fwprice']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[fwprice]" id="fwprice"value="{$val['fwprice']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>国际运费</th>
 								<td>
-									<input type="text" name="post[fare]" value="{$val['fare']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[fare]" id="fare" value="{$val['fare']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>国内运费</th>
 								<td>
-									<input type="text" name="post[infare]" value="{$val['infare']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[infare]" id="infare" value="100" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>汇率</th>
 								<td>
-									<input type="text" name="post[huilv]" value="{$val['huilv']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[huilv]" id="huilv" value="{$val['huilv']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>总价</th>
 								<td>
-									<input type="text" name="post[totalprice]" value="{$val['totalprice']}" style="width: 320px" placeholder="请输入价格">
-									<select name="price_unit" style="width:80px;">
+									<input type="text" name="post[totalprice]" id="totalprice" value="{$val['totalprice']}" style="width: 320px" placeholder="请输入价格">
+									<select name="post[price_unit]" id="price_unit" style="width:80px;">
 										<option value="1" <if condition="$val['price_unit'] eq 1">selected</if>>人民币</option>
 										<option value="2" <if condition="$val['price_unit'] eq 2">selected</if>>欧元</option>
 									</select>
@@ -109,14 +115,14 @@
 							<tr>
 								<th width="120">电话</th>
 								<td>
-									<input type="text" name="post[telephone]" value="{$val['telephone']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[tel]" value="{$val['telephone']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th width="120">手机</th>
 
 								<td>
-									<input type="text" name="post[mobile]" value="{$val['mobile']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[phone]" value="{$val['mobile']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
                             <tr>
@@ -143,16 +149,120 @@
 					</tr>
 					<tr>
 						<td>
-							<label class="radio"><input type="radio" name="post[yunshu]" value="0" <if condition="$val.yunshu == 0">checked="checked"</if>>未发货</label>
-							<label class="radio"><input type="radio" name="post[yunshu]" value="1" <if condition="$val.yunshu == 1">checked="checked"</if>>已发货</label>
+							<label class="radio"><input type="radio" name="post[order_status]" value="0" <if condition="$val.order_status == 0">checked="checked"</if>>未发货</label>
+							<label class="radio"><input type="radio" name="post[order_status]" value="1" <if condition="$val.order_status == 1">checked="checked"</if>>已发货</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="radio"><input type="radio" name="post[yunshu]" value="0" <if condition="$val.yunshu == 0">checked="checked"</if>>未运输</label>
+							<label class="radio"><input type="radio" name="post[yunshu]" value="1" <if condition="$val.yunshu == 1">checked="checked"</if>>已运输</label>
 						</td>
 					</tr>
 
 				</table>
 			</div>
 			</div>
+			<script language="javascript">
+                function types(obj){
+                    var price = parseInt(document.getElementById("price").value);
+                    var total = 0;
+                    if(obj.name == 'type_othertowns')
+                    {
+                        document.getElementById("fwprice").value = "12";
+                        document.getElementById("fare").value = "<?php echo FREIGHT;?>";
+                        document.getElementById("infare").value = "200";
+                        document.getElementById("huilv").value = "<?php echo $config['huilv'];?>";
+                        var huilv = "<?php echo $config['huilv'];?>";
+                        total = Math.round(((price * 1.12 + parseInt(<?php echo FREIGHT;?>)) * huilv)) + 200;
+                        document.getElementById("totalprice").value = total;
+                        $("#price_unit").find("option[text='人民币']").attr("selected",true);
+                        if(confirm("订单总额是：" + total))
+                        {
+                            //document.getElementById("frmDemo").sumbit();
+                            document.getElementById("order_type").value = 0;
+                            $("form").submit();
+                        }else{
+                            return false;
+                        }
+                    }
+                    if(obj.name == 'type_beijing')
+                    {
+                        document.getElementById("fwprice").value = "12";
+                        document.getElementById("fare").value = "<?php echo FREIGHT;?>";
+                        document.getElementById("infare").value = "0";
+                        document.getElementById("huilv").value = "<?php echo $config['huilv'];?>";
+                        var huilv = "<?php echo $config['huilv'];?>";
+                        total = Math.round(((price * 1.12 + parseInt(<?php echo FREIGHT;?>)) * huilv));
+                        document.getElementById("totalprice").value = total;
+                        $("#price_unit").find("option[text='人民币']").attr("selected",true);
+                        if(confirm("订单总额是：" + total)){
+                            document.getElementById("order_type").value = 1;
+                            $("form").submit();
+                        }else{
+                            return false;
+                        }
+
+                    }
+                    if(obj.name == 'type_taiwan')
+                    {
+                        document.getElementById("fwprice").value = "0";
+                        document.getElementById("fare").value = "<?php echo FREIGHT;?>"; //运费
+                        document.getElementById("infare").value = "0";
+                        document.getElementById("huilv").value = "1";
+                        total = price + parseInt(<?php echo FREIGHT;?>);
+                        document.getElementById("totalprice").value = total;
+                        $("#price_unit").find("option[text='欧元']").attr("selected",true);
+                        if(confirm("订单总额是：" + total)){
+                            document.getElementById("order_type").value = 2;
+                            $("form").submit();
+                        }else{
+                            return false;
+                        }
+                    }
+                    if(obj.name == 'type_europe')
+                    {
+                        document.getElementById("fwprice").value = "0";
+                        document.getElementById("fare").value = "0";
+                        document.getElementById("infare").value = "0";
+                        document.getElementById("huilv").value = "1";
+                        total = price;
+                        document.getElementById("totalprice").value = total;
+                        $("#price_unit").find("option[text='欧元']").attr("selected",true);
+                        if(confirm("订单总额是：" + total)){
+                            document.getElementById("order_type").value = 3;
+                            $("form").submit();
+                        }else{
+                            return false;
+                        }
+                    }
+                    if(obj.name == 'type_repurchase')
+                    {
+                        document.getElementById("fwprice").value = "0";
+                        document.getElementById("fare").value = "0";
+                        document.getElementById("infare").value = "0";
+                        document.getElementById("huilv").value = "0";
+                        total = 0;
+                        document.getElementById("totalprice").value = total;
+                        if(confirm("订单总额是：" + total)){
+                            document.getElementById("order_type").value = 4;
+                            $("form").submit();
+                        }else{
+                            return false;
+                        }
+                    }
+
+
+                }
+			</script>
 			<div class="form-actions">
-				<button class="btn btn-primary " type="submit">提交</button>
+				<input name="post[order_type]" id="order_type"  type="hidden">
+				<INPUT class=bnt type="button" value="外埠" name=type_othertowns onclick="types(this);">
+				<INPUT class=bnt type="button" value="北京" name=type_beijing onclick="types(this);">
+				<INPUT class=bnt type="button" value="台湾" name=type_taiwan onclick="types(this);">
+				<INPUT class=bnt type="button" value="欧洲" name=type_europe onclick="types(this);">
+				<INPUT class=bnt type="button" value="回购" name=type_repurchase onclick="types(this);">
+				<button class="btn btn-primary " type="submit" name="type_createorder">提交</button>
 				<a class="btn" href="{:U('Membersadmin/fkdjindex')}">返回</a>
 			</div>
 		</form>
@@ -166,7 +276,7 @@
 	<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			
+
 			//setInterval(function(){public_lock_renewal();}, 10000);
 			$(".js-ajax-close-btn").on('click', function(e) {
 				e.preventDefault();

@@ -396,19 +396,17 @@ class AuctionadminController extends AdminbaseController
     {
         if (IS_POST) {
             $post_id = intval($_POST['post']['id']);
+
             unset($_POST['post']['post_author']);
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
             //删除原始的id
             array_splice($article,0,1);
             $article['order_sn']  = $this->get_sn();
-            echo "<pre>";
-            print_r($article);
-            die;
             $result = $this-> pmorder_model->add($article);
             if ($result !== false) {
                 //修改待处理订单的状态
-                $this-> pmjilu_model->where($post_id)->setField('status',1);
+                $this-> pmjilu_model->where("id = $post_id")->setField('status',1);
                 $this->success("保存成功！");
             } else {
                 $this->error("保存失败！");
@@ -418,17 +416,17 @@ class AuctionadminController extends AdminbaseController
         $where = array();
         $id = I('get.id');
         $where['lanhai_pmjilu.id'] = $id;
+
         $info = $this-> pmjilu_model
                 ->where($where)
                 ->join('lanhai_pmproduct pm ON lanhai_pmjilu.gid = pm.id')
+                ->join('lanhai_pmzt t ON lanhai_pmjilu.cid = t.id')
                 ->join('lanhai_members m ON lanhai_pmjilu.uid = m.id')
-                ->field('lanhai_pmjilu.id,gid,uid,pmprice,pm.sequence,pm.title,huanhao,m.username,realname,address,email,telephone,mobile')
+                ->field('lanhai_pmjilu.id,gid,uid,pmprice,t.end_time,pm.sequence,pm.title,lanhai_pmjilu.cid,huanhao,m.username,realname,address,email,telephone,mobile,pm_time,baojin')
                 ->select();
         $this->assign('post', $info);
         $this->display();
     }
-
-    // 后台拍卖历史列表
     public function historyindex()
     {
         $where = array();

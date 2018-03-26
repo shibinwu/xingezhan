@@ -17,6 +17,8 @@ if (ini_get('magic_quotes_gpc')) {
 	$_GET = stripslashesRecursive($_GET);
 	$_POST = stripslashesRecursive($_POST);
 }
+//define('FREIGHT',220);//国际运费
+define('FREIGHT',220);//国际运费
 //开启调试模式
 define("APP_DEBUG", true);
 //网站当前路径
