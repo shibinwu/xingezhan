@@ -2,7 +2,7 @@
 namespace Auction\Controller;
 
 use Common\Controller\AdminbaseController;
-
+ini_set('memory_limit','100M');
 class AuctionadminController extends AdminbaseController
 {
     //当前使用语言 常量  LANG_SET 
@@ -47,8 +47,8 @@ class AuctionadminController extends AdminbaseController
             ->where($where)
             ->order("addtime DESC")
             ->limit($page->firstRow . ',' . $page->listRows)
+            ->field('id,adduser,seq,tname,start_time,end_time,cn_show,tuijian,addtime')
             ->select();
-        $a = array();
         foreach ($list as $k => $val) {
             $list[$k]['names'] = $this->user_model->where(array('id' => $val['adduser']))->getField('user_nicename');
             $list[$k]['nums'] = $this->pmproduct_model->where(array('cid' => $val['id']))->count();
@@ -56,7 +56,6 @@ class AuctionadminController extends AdminbaseController
             $list[$k]['totals']=array_sum($nums);
 
         }
-        $data = $this->pmproduct_model->select();
         $this->assign('list', $list);
         $this->assign("page", $page->show('Admin'));
 
