@@ -40,12 +40,15 @@
 						<td align="center">{$vo.id}</td>
 						<td>{$vo.huanhao}</td>
 						<td>{$vo.title}</td>
-						<td>{$vo.prize}</td>
+						<td>{$vo.price}</td>
 						<td>{$vo.totalprice}</td>
 						<td>{$vo.realname}</td>
 						<td>{$vo.tel}</td>
-						<td>{$vo[datatime] | date="Y-m-d H:i:s",###}</td>
-						<td>{$vo.tel}</td>
+						<td>{$vo[addtime] | date="Y-m-d H:i:s",###}</td>
+						<td><if condition="$vo[pay_status] eq 1">已付款
+							<else/>未付款
+							</if>
+						</td>
 						<!--<td>{$vo['names']|default=$vo['adduser']}</td>-->
 						<td align="center">
 							<a href="{:U('Indexadmin/showedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>

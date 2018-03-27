@@ -260,7 +260,10 @@ class IndexadminController extends AdminbaseController
             ->limit($page->firstRow . ',' . $page->listRows)
             ->select();
         foreach ($list as $k => $val) {
-            $list[$k]['names'] = $this->user_model->where(array('id' => $val['user_name']))->getField('user_nicename');
+//            $list[$k]['names'] = $this->members_model->where(array('id' => $val['user_id']))->getField('user_nicename');
+            $list[$k]['realname'] = $this->members_model->where(array('id' => $val['user_id']))->getField('realname');
+            $list[$k]['huanhao'] = $this->product_model->where(array('id' => $val['shangping_id']))->getField('huanhao');
+            $list[$k]['title'] = $this->product_model->where(array('id' => $val['shangping_id']))->getField('title');
         }
         $this->assign('list', $list);
         $this->assign("page", $page->show('Admin'));
