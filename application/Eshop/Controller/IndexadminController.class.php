@@ -312,12 +312,12 @@ class IndexadminController extends AdminbaseController
             unset($_POST['post']['post_author']);
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
+            $article['addtime'] = time();
             //删除原始的id
-            array_splice($article,0,1);
-            $result = $this-> pmorder_model->add($article);
+//            array_splice($article,0,1);
+            $result = $this-> product_order_model->save($article);
             if ($result !== false) {
                 //修改待处理订单的状态
-                $this-> pmjilu_model->where($post_id)->setField('status',1);
                 $this->success("保存成功！");
             } else {
                 $this->error("保存失败！");
@@ -331,8 +331,12 @@ class IndexadminController extends AdminbaseController
             ->where($where)
             ->join('lanhai_product pm ON lanhai_zsorder.shangping_id = pm.id')
             ->join('lanhai_members m ON lanhai_zsorder.user_id = m.id')
-            ->field('lanhai_zsorder.id,shangping_id,user_id,pm.price,pm.sequence,pm.title,huanhao,m.username,m.realname,m.address,m.email,m.telephone,m.mobile')
+            ->field('lanhai_zsorder.id,lanhai_zsorder.remark,shangping_id,user_id,pm.price,pm.sequence,pm.title,huanhao,m.username,m.realname,m.address,m.email,m.telephone,m.mobile')
             ->select();
+        foreach ($info as $key => $val){
+            $info = $val;
+        }
+        $info['order_sn'] = $this->get_sn();
         $this->assign('post', $info);
         $this->display('orderedit');
     }

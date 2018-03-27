@@ -11,80 +11,83 @@
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li><a href="{:U('Membersadmin/fkdjindex')}">{:L('AUCTION_GORDER_INDEX')}</a></li>
+			<!--<li><a href="{:U('Membersadmin/fkdjindex')}">{:L('AUCTION_GORDER_INDEX')}</a></li>-->
 			<!--<li><a href="{:U('Membersadmin/fkdjadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('FKDJ_MEMBERSADMIN_ADD')}</a></li>-->
-			<li class="active"><a href="#">{:L('AUCTION_GORDER_EDIT')}</a></li>
+			<li class="active"><a href="#">{:L('ESHOP_PRODUCT_ORDER_EDIT')}</a></li>
 		</ul>
-		<form action="{:U('Auctionadmin/pendingorderedit')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+		<form action="{:U('Indexadmin/orderedit')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
-
-						<foreach name="post" item="val">
-							<input type="hidden" name="post[id]" value="{$val.id}">
-							<!--<input type="hidden" name="post[cid]" value="{$val.cid}">-->
+							<input type="hidden" name="post[id]" value="{$post.id}">
+							<tr>
+								<th width="120">订单号</th>
+								<td>
+									<input type="text" name="post[order_sn]" value="{$post['order_sn']}" readonly="readonly" style="width: 400px" placeholder="请输入订单号">
+								</td>
+							</tr>
 							<tr>
 								<th width="120">鸽子名称</th>
 								<td>
-									<span class="zitidaxiao">{$val.title}</span>
+									<span class="zitidaxiao">{$post.title}</span>
 								</td>
 							</tr>
 							<tr>
 								<th width="120">环号</th>
 								<td>
-									<span class="zitidaxiao">{$val.huanhao}</span>
+									<span class="zitidaxiao">{$post.huanhao}</span>
 								</td>
 							</tr>
 							<tr>
 								<th width="120">拍鸽人</th>
 								<td>
-									<span class="zitidaxiao">{$val.username}</span>
+									<span class="zitidaxiao">{$post.username}</span>
 								</td>
 							</tr>
 							<tr>
 								<th width="120">价格</th>
 								<td>
-									<span class="zitidaxiao">{$val.pmprice}</span>
+									<input type="text" name="post[price]" value="{$post['price']}" readonly="readonly" style="width: 400px" placeholder="请输入单价">
 								</td>
 							</tr>
 							<tr>
 								<th>进口税费</th>
 								<td>
-									<input type="text" name="post[fwprice]" value="{$val['fwprice']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[fwprice]" value="{$post['fwprice']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>国际运费</th>
 								<td>
-									<input type="text" name="post[fare]" value="{$val['fare']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[fare]" value="{$post['fare']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>国内运费</th>
 								<td>
-									<input type="text" name="post[infare]" value="{$val['infare']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[infare]" value="{$post['infare']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>汇率</th>
 								<td>
-									<input type="text" name="post[huilv]" value="{$val['huilv']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[huilv]" value="{$post['huilv']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th>总价</th>
 								<td>
-									<input type="text" name="post[totalprice]" value="{$val['totalprice']}" style="width: 320px" placeholder="请输入价格">
+									<input type="text" name="post[totalprice]" value="{$post['totalprice']}" style="width: 320px" placeholder="请输入价格">
 									<select name="price_unit" style="width:80px;">
-										<option value="1" <if condition="$val['price_unit'] eq 1">selected</if>>人民币</option>
-										<option value="2" <if condition="$val['price_unit'] eq 2">selected</if>>欧元</option>
+										<option value="1" <if condition="$post['price_unit'] eq 1">selected</if>>人民币</option>
+										<option value="2" <if condition="$post['price_unit'] eq 2">selected</if>>欧元</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th width="120">真实姓名</th>
 								<td>
-									<input type="text" name="post[realname]" value="{$val['realname']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[realname]" value="{$post['realname']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
@@ -96,56 +99,53 @@
 							<tr>
 								<th width="120">具体地址</th>
 								<td>
-									<input type="text" name="post[address]" value="{$val['address']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[address]" value="{$post['address']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th width="120">邮箱</th>
 								<td>
-									<input type="text" name="post[email]" value="{$val['email']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[email]" value="{$post['email']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 
 							<tr>
 								<th width="120">电话</th>
 								<td>
-									<input type="text" name="post[telephone]" value="{$val['telephone']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[tel]" value="{$post['telephone']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th width="120">手机</th>
 
 								<td>
-									<input type="text" name="post[mobile]" value="{$val['mobile']}" style="width: 400px" placeholder="请输入运费">
+									<input type="text" name="post[phone]" value="{$post['mobile']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
 							<tr>
 								<th width="120">备注</th>
+
 								<td>
-									<span class="zitidaxiao">{$val.remark}</span>
+									<input type="text" name="post[remark]" value="{$post['remark']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
-						</foreach>
-
 					</table>
 				</div>
 				<div class="span3">
-
-
 				<table class="table table-bordered">
 					<tr>
 						<th><b>状态</b></th>
 					</tr>
 					<tr>
 						<td>
-							<label class="radio"><input type="radio" name="post[pay_status]" value="0" <if condition="$val.pay_status == 0">checked="checked"</if>>未付款</label>
-							<label class="radio"><input type="radio" name="post[pay_status]" value="1" <if condition="$val.pay_status == 1">checked="checked"</if>>已付款</label>
+							<label class="radio"><input type="radio" name="post[pay_status]" value="0" <if condition="$post.pay_status == 0">checked="checked"</if>>未付款</label>
+							<label class="radio"><input type="radio" name="post[pay_status]" value="1" <if condition="$post.pay_status == 1">checked="checked"</if>>已付款</label>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label class="radio"><input type="radio" name="post[yunshu]" value="0" <if condition="$val.yunshu == 0">checked="checked"</if>>未发货</label>
-							<label class="radio"><input type="radio" name="post[yunshu]" value="1" <if condition="$val.yunshu == 1">checked="checked"</if>>已发货</label>
+							<label class="radio"><input type="radio" name="post[order_status]" value="0" <if condition="$post.order_status == 0">checked="checked"</if>>未发货</label>
+							<label class="radio"><input type="radio" name="post[order_status]" value="1" <if condition="$post.order_status == 1">checked="checked"</if>>已发货</label>
 						</td>
 					</tr>
 
@@ -154,7 +154,7 @@
 			</div>
 			<div class="form-actions">
 				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
-				<a class="btn" href="{:U('Membersadmin/fkdjindex')}">返回</a>
+				<a class="btn" href="{:U('Indexadmin/orderlist')}">返回</a>
 			</div>
 		</form>
 	</div>

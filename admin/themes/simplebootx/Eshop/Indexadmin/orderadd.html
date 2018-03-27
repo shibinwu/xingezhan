@@ -8,8 +8,8 @@
 <body>
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
-        <li><a href="{:U('Indexadmin/showindex')}">{:L('ESHOP_PRODUCT_ORDER_INDEX')}</a></li>
-        <li class="active"><a href="{:U('Indexadmin/showadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('ESHOP_PRODUCT_ORDER_ADD')}</a></li>
+        <li><a href="{:U('Indexadmin/orderlist')}">{:L('ESHOP_PRODUCT_ORDER_INDEX')}</a></li>
+        <li class="active"><a href="{:U('Indexadmin/orderadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('ESHOP_PRODUCT_ORDER_ADD')}</a></li>
     </ul>
     <form action="{:U('Indexadmin/orderadd')}" method="post" class="form-horizontal " enctype="multipart/form-data">
         <div class="row-fluid">

@@ -39,7 +39,7 @@ return array(
         //产品订单
         'ESHOP_PRODUCT_ORDER_INDEX' => '产品订单列表',
         'ESHOP_PRODUCT_ORDER_ADD' => '添加产品订单',
-        'ESHOP_PRODUCT_ORDER_EDIT' => '编辑产品订单',
+        'ESHOP_PRODUCT_ORDER_EDIT' => '订单详情',
         "JINE" => '金额',
         "RMB" => '人民币',
         "RELATION" => '联系人',
