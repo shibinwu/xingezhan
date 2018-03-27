@@ -13,9 +13,9 @@
 		<ul class="nav nav-tabs">
 			<!--<li><a href="{:U('Membersadmin/fkdjindex')}">{:L('AUCTION_GORDER_INDEX')}</a></li>-->
 			<!--<li><a href="{:U('Membersadmin/fkdjadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('FKDJ_MEMBERSADMIN_ADD')}</a></li>-->
-			<li class="active"><a href="#">{:L('ESHOP_PRODUCT_ORDER_EDIT')}</a></li>
+			<li class="active"><a href="#">{:L('ESHOP_GYORDER_EDIT')}</a></li>
 		</ul>
-		<form action="{:U('Indexadmin/orderedit')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+		<form action="{:U('Indexadmin/geyaoedit')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
@@ -27,23 +27,18 @@
 								</td>
 							</tr>
 							<tr>
-								<th width="120">鸽子名称</th>
+								<th width="120">鸽药名称</th>
 								<td>
 									<span class="zitidaxiao">{$post.title}</span>
 								</td>
 							</tr>
 							<tr>
-								<th width="120">环号</th>
+								<th>数量</th>
 								<td>
-									<span class="zitidaxiao">{$post.huanhao}</span>
+									<input type="text" name="post[num]" value="{$post['num']}" style="width: 400px" placeholder="请输入运费">
 								</td>
 							</tr>
-							<tr>
-								<th width="120">拍鸽人</th>
-								<td>
-									<span class="zitidaxiao">{$post.username}</span>
-								</td>
-							</tr>
+
 							<tr>
 								<th width="120">价格</th>
 								<td>
@@ -51,27 +46,9 @@
 								</td>
 							</tr>
 							<tr>
-								<th>进口税费</th>
+								<th width="120">用户名</th>
 								<td>
-									<input type="text" name="post[fwprice]" value="{$post['fwprice']}" style="width: 400px" placeholder="请输入运费">
-								</td>
-							</tr>
-							<tr>
-								<th>国际运费</th>
-								<td>
-									<input type="text" name="post[fare]" value="{$post['fare']}" style="width: 400px" placeholder="请输入运费">
-								</td>
-							</tr>
-							<tr>
-								<th>国内运费</th>
-								<td>
-									<input type="text" name="post[infare]" value="{$post['infare']}" style="width: 400px" placeholder="请输入运费">
-								</td>
-							</tr>
-							<tr>
-								<th>汇率</th>
-								<td>
-									<input type="text" name="post[huilv]" value="{$post['huilv']}" style="width: 400px" placeholder="请输入运费">
+									<span class="zitidaxiao">{$post.username}</span>
 								</td>
 							</tr>
 							<tr>
@@ -154,7 +131,7 @@
 			</div>
 			<div class="form-actions">
 				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
-				<a class="btn" href="{:U('Indexadmin/orderlist')}">返回</a>
+				<a class="btn" href="{:U('Indexadmin/geyaoindex')}">返回</a>
 			</div>
 		</form>
 	</div>
@@ -301,7 +278,7 @@
 											}, {
 												name : '返回列表页',
 												callback : function() {
-													location = "{:U('Indexadmin/orderlist')}";
+													location = "{:U('Indexadmin/geyaoindex')}";
 													return true;
 												}
 											} ]

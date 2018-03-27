@@ -4,7 +4,7 @@
 	<div class="wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a>{:L('ESHOP_GYORDER_INDEX')}</a></li>
-			<li><a href="{:U('Eshop/Indexadmin/showadd')}">{:L('ESHOP_GYORDER_ADD')}</a></li>
+			<li><a href="{:U('Eshop/Indexadmin/geyaoadd')}">{:L('ESHOP_GYORDER_ADD')}</a></li>
 		</ul>
 		<form class="well form-search" method="post" action="{:U('Indexadmin/index')}">
 			{:L('STATUS')}： 
@@ -46,7 +46,7 @@
 						<td>{$vo.realname}</td>
 						<td>{$vo.phone}</td>
 						<td>{$vo.tel}</td>
-						<td>{$vo.addtime | date="Y-m-d H:i:s",###}</td>
+						<td>{$vo[addtime] | date="Y-m-d H:i:s",###}</td>
 						<td><if condition='$vo.pay_status == 0'>未付款
 							<elseif condition='$vo.pay_status ==1'/>已付款
 							<elseif condition='$vo.pay_status ==2'/>未运输
@@ -54,9 +54,9 @@
 							<else/>&nbsp</if>
 						</td>
 						<td align="center">
-							<a href="{:U('Indexadmin/showedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>
+							<a href="{:U('Indexadmin/geyaoedit',array('id'=>$vo['id']))}" >{:L('EDIT')}</a>
 							|
-							<a href="{:U('Indexadmin/showdelete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+							<a href="{:U('Indexadmin/geyaodelete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
 						</td>
 					</tr>
 					</foreach>

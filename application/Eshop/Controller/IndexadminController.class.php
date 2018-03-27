@@ -374,10 +374,6 @@ class IndexadminController extends AdminbaseController
         foreach ($list as $k => $val) {
             $list[$k]['name'] = $usersMod->where(array('id' => $val['created_by']))->getField('user_nicename');
         }
-//        echo "<pre>";
-//        print_r($list);
-//        echo "</pre>";
-//        die;
 
         $this->assign('list', $list);
         $this->assign("page", $page->show('Admin'));
@@ -385,35 +381,54 @@ class IndexadminController extends AdminbaseController
         $this->display();
     }
 
-    // 后台药品添加
-    public function add()
+    // 后台鸽子展售订单添加
+    public function geyaoadd()
     {
         if (IS_POST) {
-            $_POST['post']['small_pic'] = sp_asset_relative_url($_POST['smeta']['thumb']);
-            $_POST['post']['created_by'] = get_current_admin_id();
+            $_POST['post']['adduser'] = get_current_admin_id();
             $article = I("post.post");
-            $article['content'] = htmlspecialchars_decode($article['content']);
-            $result = $this->posts_model->add($article);
-            if ($result) {
-                $this->success("添加成功！");
-            } else {
-                $this->error("添加失败！");
+            //取出产品id和会员id
+            $products = $this-> posts_model-> getField('id',true);
+            $members = $this->members_model -> getField('id',true);
+            //判断输入的产品id和会员id是否存在
+            if (in_array("$article[shangping_id]", $products))
+            {
+                if (in_array("$article[user_id]", $members)){
+                    $result = $this->yporder_model->add($article);
+                    if ($result) {
+                        $_POST = array("id" => "$result");
+                        $this->geyaoedit();
+                    } else {
+                        $this->error("添加失败！");
+                    }
+                    exit;
+                }else{
+                    echo "未找到该会员";
+                    $this->display();
+                    exit;
+                }
             }
-            exit;
+            else
+            {
+                echo "请输入正确的鸽药ID";
+                $this->display();
+                exit;
+            }
         }
         $this->display();
     }
-
-    // 后台药品编辑
-    public function edit()
+    // 后台处理订单信息，生成订单
+    public function geyaoedit()
     {
-        if (IS_POST) {
+        if (IS_POST && count($_POST) > 1) {
             $post_id = intval($_POST['post']['id']);
-            $_POST['post']['small_pic'] = sp_asset_relative_url($_POST['smeta']['thumb']);
             unset($_POST['post']['post_author']);
             $article = I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
-            $result = $this->posts_model->save($article);
+            $article['addtime'] = time();
+            //删除原始的id
+//            array_splice($article,0,1);
+            $result = $this-> yporder_model->save($article);
             if ($result !== false) {
                 $this->success("保存成功！");
             } else {
@@ -422,13 +437,22 @@ class IndexadminController extends AdminbaseController
             exit;
         }
         $where = array();
-        $id = I('get.id');
-        $where['id'] = $id;
-        $yaopin_model = M("Yaopin");
-        $info = $yaopin_model->where($where)->find();
+        $id = I('post.id');
+        $where['lanhai_yaopin_order.id'] = $id;
+        $info = $this-> yporder_model
+            ->where($where)
+            ->join('lanhai_yaopin y ON lanhai_yaopin_order.shangping_id = y.id')
+            ->join('lanhai_members m ON lanhai_yaopin_order.user_id = m.id')
+            ->field('lanhai_yaopin_order.id,lanhai_yaopin_order.remark,num,shangping_id,user_id,y.price,y.sequence,y.title,m.username,m.realname,m.address,m.email,m.telephone,m.mobile')
+            ->select();
+        foreach ($info as $key => $val){
+            $info = $val;
+        }
+        $info['order_sn'] = $this->get_sn();
         $this->assign('post', $info);
-        $this->display();
+        $this->display('geyaoedit');
     }
+
 
     // 药品删除
     public function delete()
