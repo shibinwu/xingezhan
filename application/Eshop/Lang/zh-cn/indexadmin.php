@@ -66,5 +66,8 @@ return array(
         "AUCTION_SHOW" => '拍卖显示',
         "AUCTION_GEZI_SHOW" => '拍卖显示',
 
+        "DAOCHU" => '导出',
+        "FASONGYOUJIAN" => '发送邮件',
+
 
 );

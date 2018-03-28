@@ -347,6 +347,7 @@ class IndexadminController extends AdminbaseController
     // 后台药品列表
     public function index()
     {
+
         $where = array();
         $request = I('request.');
 
@@ -534,6 +535,24 @@ class IndexadminController extends AdminbaseController
         $objWriter->save('php://output');
         exit;
     }
+    public function sendemail(){
+        if (IS_POST) {
+            $article = I("post.post");
+            $article['content'] = htmlspecialchars_decode($article['content']);
+            $address = $article['to'];
+            $subject = $article['subject'];
+            $message = $article['content'];
+            $arr = sp_send_email($address,$subject,$message);
+            if ($arr['error']) {
+                $this->error("发送失败！");
+            } else {
+                $this->success("发送成功！");
+            }
+            exit;
+        }
+        $this->display();
+    }
+
 
     //生成订单号
     public function get_sn() {
