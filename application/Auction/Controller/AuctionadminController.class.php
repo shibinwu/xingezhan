@@ -174,7 +174,6 @@ class AuctionadminController extends AdminbaseController
             ->select();
         foreach ($list as $k => $val) {
             $list[$k]['types'] = $this->pmzt_model->where(array('id' => $val['cid']))->getField('tname');
-//            $list[$k]['member'] = $this->pmjilu_model->where(array('gid' => $val['id']))->field('uid,username,pmprice')->select();
             $temp = $this->pmjilu_model->where(array('gid' => $val['id']))->field('uid,username,pmprice')->select();
             foreach ($temp as $k => $val){
                 $list[$k]['uid'] = $val['uid'];
@@ -186,23 +185,30 @@ class AuctionadminController extends AdminbaseController
                     $list[$k]['realname'] = $val['realname'];
                 }
             }
-//            $sql = " select uid,username,pmprice from cms_pmjilu where gid= ".$val['id']." order by id desc limit 1 ";
         }
         $this->assign('list', $list);
         $this->assign("page", $page->show('Admin'));
 
         $this->display();
     }
-
     // 后台拍卖信鸽添加
     public function xingeadd()
     {
         if (IS_POST) {
-            $_POST['post']['pic'] = sp_asset_relative_url($_POST['smeta']['thumb']);
-            $_POST['post']['created_by'] = get_current_admin_id();
-            $article = I("post.post");
+            if(!empty($_POST['photos_alt']) && !empty($_POST['photos_url'])){
+                foreach ($_POST['photos_url'] as $key=>$url){
+                    $photourl=sp_asset_relative_url($url);
+                    $_POST['post'][$key] = $photourl;
+//                    $_POST['post'][$_POST['photos_alt'][$key]]= $photourl;
+                }
+            }
+            $_POST['post']['created_by']=get_current_admin_id();
+            $article=I("post.post");
             $article['content'] = htmlspecialchars_decode($article['content']);
-            $result = M("Pmproduct")->add($article);
+            $article['pic'] = $article['0'];
+            $article['xtpic'] = $article['1'];
+            $article['yjpic'] = $article['2'];
+            $result=$this->pmproduct_model->add($article);
             if ($result) {
                 $this->success("添加成功！");
             } else {
@@ -210,6 +216,20 @@ class AuctionadminController extends AdminbaseController
             }
             exit;
         }
+//        if (IS_POST) {
+//            $_POST['post']['pic'] = sp_asset_relative_url($_POST['smeta']['thumb']);
+//            $_POST['post']['xtpic'] = sp_asset_relative_url($_POST['smeta']['thumbs']);
+//            $_POST['post']['created_by'] = get_current_admin_id();
+//            $article = I("post.post");
+//            $article['content'] = htmlspecialchars_decode($article['content']);
+//            $result = M("Pmproduct")->add($article);
+//            if ($result) {
+//                $this->success("添加成功！");
+//            } else {
+//                $this->error("添加失败！");
+//            }
+//            exit;
+//        }
         $info = $this->pmzt_model->getField('id,tname');
         $this->assign('post', $info);
         $this->display();
@@ -244,6 +264,7 @@ class AuctionadminController extends AdminbaseController
         $where['id'] = $id;
         $info = $this-> pmproduct_model->where($where)->find();
         $data = $this-> pmzt_model ->getField('id,tname');
+
         $this->assign('post', $info);
         $this->assign('data', $data);
         $this->display();

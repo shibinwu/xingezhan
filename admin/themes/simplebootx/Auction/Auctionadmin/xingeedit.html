@@ -177,24 +177,43 @@
 			</div>
 			<div class="span3">
 				<table class="table table-bordered">
+					<!--<tr>-->
+						<!--<th><b>鸽子图片</b></th>-->
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>-->
+							<!--<div style="text-align: center;">-->
+								<!--<input type="hidden" name="smeta[thumb]" id="thumb" value="{$post.pic|default=''}">-->
+								<!--<a href="javascript:upload_one_image('图片上传','#thumb');">-->
+									<!--<if condition="empty($post['pic'])">-->
+										<!--<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>-->
+										<!--<else />-->
+										<!--<img src="{:sp_get_image_preview_url($post['pic'])}" id="thumb-preview1" width="135" style="cursor: hand"/>-->
+									<!--</if>-->
+								<!--</a>-->
+								<!--<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">-->
+							<!--</div>-->
+						<!--</td>-->
+					<!--</tr>-->
 					<tr>
-						<th><b>鸽子图片</b></th>
-					</tr>
-					<tr>
+						<th>鸽子图集</th>
 						<td>
-							<div style="text-align: center;">
-								<input type="hidden" name="smeta[thumb]" id="thumb" value="{$post.pic|default=''}">
-								<a href="javascript:upload_one_image('图片上传','#thumb');">
-									<if condition="empty($post['pic'])">
-										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>
-										<else />
-										<img src="{:sp_get_image_preview_url($post['pic'])}" id="thumb-preview1" width="135" style="cursor: hand"/>
-									</if>
-								</a>
-								<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
-							</div>
+							<ul id="photos" class="pic-list unstyled"></ul>
+							<a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
+							<img id="1" src="{:sp_get_image_preview_url($post['pic'])}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
+							<a href="javascript:upload_one_image('图片上传','#1');">替换</a>
 						</td>
 					</tr>
+					<script type="text/html" id="photos-item-wrapper">
+						<li id="savedimage{id}">
+							<input id="photo-{id}" type="hidden" name="photos_url[]" value="{filepath}">
+							<input id="photo-{id}-name" type="text" name="photos_alt[]" value="{name}" style="width: 160px;" title="图片名称">
+							<img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
+							<img id="" src="{:sp_get_image_preview_url($post['pic'])}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
+							<a href="javascript:upload_one_image('图片上传','#photo-{id}');">替换</a>
+							<a href="javascript:(function(){$('#savedimage{id}').remove();})();">移除</a>
+						</li>
+					</script>
 					<tr>
 						<th><b>鸽子性别</b></th>
 					</tr>
