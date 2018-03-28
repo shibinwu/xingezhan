@@ -47,13 +47,15 @@ class AssetController extends AdminbaseController {
                 $app= strtolower($app);
             }
             
-			$savepath=$app.'/'.date('Ymd').'/';
+//			$savepath=$app.'/'.date('Ymd').'/';
+			$savepath=$app.'/'.'tupian' .'/';
             //上传处理类
             $config=array(
             		'rootPath' => './'.C("UPLOADPATH"),
             		'savePath' => $savepath,
             		'maxSize' => $upload_max_filesize,
-            		'saveName'   =>    array('uniqid',''),
+//            		'saveName'   =>    array('uniqid',''),
+            		'saveName'   =>    '',
             		'exts'       =>    $all_allowed_exts,
             		'autoSub'    =>    false,
             );
