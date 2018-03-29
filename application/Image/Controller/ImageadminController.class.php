@@ -14,9 +14,27 @@ class ImageadminController extends AdminbaseController
     }
 
     // 后台拍卖管理列表
-    public function imageindex()
-    {
+    public function imageindex(){
+        $path = './data/upload/default/tupian/';
+        $result = $this->scanFile($path);
+        $this->assign('result',$result);
+        dump($result);
         $this->display();
+    }
+
+    function scanFile($path) {
+        global $result;
+        $files = scandir($path);
+        foreach ($files as $file) {
+            if ($file != '.' && $file != '..') {
+                if (is_dir($path . '/' . $file)) {
+                    scanFile($path . '/' . $file);
+                } else {
+                    $result[] = basename($file);
+                }
+            }
+        }
+        return $result;
     }
     // 后台拍卖信鸽编辑
     public function imageedit()

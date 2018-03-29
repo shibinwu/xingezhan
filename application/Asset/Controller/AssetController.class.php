@@ -55,6 +55,7 @@ class AssetController extends AdminbaseController {
             		'savePath' => $savepath,
             		'maxSize' => $upload_max_filesize,
 //            		'saveName'   =>    array('uniqid',''),
+                    'replace'   =>    true,
             		'saveName'   =>    '',
             		'exts'       =>    $all_allowed_exts,
             		'autoSub'    =>    false,
