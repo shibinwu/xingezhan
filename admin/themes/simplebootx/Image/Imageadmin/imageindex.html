@@ -1,0 +1,51 @@
+<admintpl file="header" />
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('Auctionadmin/xingeadd',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">{:L('IMAGE_INDEX')}</a></li>
+        <li><a href="javascript:upload_multi_images('图片上传');" class="btn btn-small">{:L('IMAGE_ADD')}</a></li>
+    </ul>
+
+</div>
+
+<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+<script type="text/javascript">
+</script>
+
+<script type="text/javascript">
+
+    function upload_multi_images(dialog_title, container_selector, item_tpl_wrapper_id, extra_params, app) {
+        open_upload_dialog(dialog_title, function (dialog, files) {
+
+        }, extra_params, 1, 'image', app);
+    }
+    $(function() {
+        $(".js-ajax-close-btn").on('click', function(e) {
+            e.preventDefault();
+            Wind.use("artDialog", function() {
+                art.dialog({
+                    id : "question",
+                    icon : "question",
+                    fixed : true,
+                    lock : true,
+                    background : "#CCCCCC",
+                    opacity : 0,
+                    content : "您确定需要关闭当前页面嘛？",
+                    ok : function() {
+                        setCookie("refersh_time", 1);
+                        window.close();
+                        return true;
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -46,7 +46,7 @@ class AssetController extends AdminbaseController {
             }else{
                 $app= strtolower($app);
             }
-            
+
 //			$savepath=$app.'/'.date('Ymd').'/';
 			$savepath=$app.'/'.'tupian' .'/';
             //上传处理类
