@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*小飞机*/
+.FJ {
+    width: 116px;
+    height: 659px;
+	position:fixed;
+	right:50px;
+	top:100px;
+	background:#F4F2F2;
+}
+.fj{
+	width:116px;
+	height:659px;
+	padding:52px 17px 45px 20px;
+	position:relative;
+}
+.FJ ul li{
+	width:80px;
+	text-align:center;
+}
+.FJ ul .SUO{
+	border-bottom:1px solid #606060;
+}
+.FJ ul li span{
+	width:80px;
+	display:block;
+	margin-bottom:25px;
+	font-size:18px;
+	color:#908F8F;
+}
+.FJ ul .APP{
+	border-bottom:1px solid #606060;
+	margin-top:26px;
+}
+.FJ ul .PHONE{
+	border-bottom:1px solid #606060;
+	margin-top:26px;
+}
+.FJ ul .FEIJI{
+	margin-top:26px;
+}
+.FJ ul .FEIJI .feijis{
+		margin-bottom:0;
+}
+.FJ ul .guanbi{
+	position:absolute;
+	top:-8px;
+	right:-3px;
+}
+.hidden{
+	display:none;
+}
+.show{
+	display:block;
+}

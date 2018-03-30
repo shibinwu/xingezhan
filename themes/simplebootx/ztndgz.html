@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拍卖专题</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/FJ.css">
+    <link rel="stylesheet" href="./css/ztndgz.css">
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- 顶部搜索框 -->
+        <div class="search">
+            <span class="lxdh">电话:010-85175305 13146616133   |   邮箱:epw@xingezhan.com</span>
+            <div class="kuang">
+                <input type="search" placeholder="搜索你想要的项目" name="搜索" id="">
+                <div class="fdj"><img src="./images/search.png" alt="" srcset=""></div>
+                <div class="gq"><img src="./images/NL.png" alt="" srcset="">
+                    <a><img src="./images/xiasanjiao.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!-- 头部 -->
+        <div class="header">
+            <div class="logo">
+                <a href=""><img src="./images/LG_EuropeanPigeonWebsite_FC.png" alt="" srcset=""></a>
+            </div>
+            <div class="list" id="list">
+                <ul>
+                    <li class="list1"><a href="./index.html">首页</a></li>
+                    <li class="list2  queding"><a href="./mgpm.html">铭鸽拍卖</a></li>
+                    <li class="list3"><a href="./mgcp.html">铭鸽产品</a></li>
+                    <li class="list4"><a href="./mrmx.html">鸽闻天下</a></li>
+                    <li id="DL" class="last list5"><a href="javascript:;">用户登录</a></li>
+                </ul>
+            </div>
+            <!-- 用户登录框 -->
+            <div class="DL hidden">
+                <span class="yhdl">用户登录</span>
+                <span class="wfdl"><a href="">忘记密码？</a></span>
+                <input type="username" style="margin-top:35px;" placeholder="您的手机号" name="搜索" id="">
+                <input type="password" style="margin-top:11px;" placeholder="密码" name="搜索" id="">
+                <div class="TS">
+                    <ul>
+                        <li class="dl"><a href="">登录</a></li>
+                        <li class="zc"><a href="">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--  -->
+        </div>
+        <!-- 标题 -->
+        <div class="hengtiao">
+            <span>首页 > 铭鸽拍卖 > 班尼·史蒂文</span>
+        </div>
+        <!-- 人物介绍 -->
+        <div class="rwjs">
+            <span class="mingzi">班尼·史蒂文</span>
+            <span class="chenghu">最好的繁育者的青少年</span>
+            <span class="xiangxijieshao">
+                    班尼·史蒂文的鸽舍建立于上世纪60年代末期，那时在慕尼黑（德国城市）放飞的国家赛风靡荷兰鸽友圈，也正因如此，初出茅庐的班尼·史蒂文凭借在该场比赛上的出色表现挣得了他在欧洲鸽坛名利场上的“第一桶金”。后佐以弗豪斯-佛哈根鸽舍（Vrosch-voragen）和亨利。范路易（Henri van Venrooij）的顶级赛绩鸽创立基础种系。是名震荷兰的超级赛鸽2005年王者之王全国幼鸽鸽王冠军“强尼男孩”的血脉。
+            </span>
+            <span class="more"><a href="./rwjs.html">更多信息</a></span>
+            <div class="changci"><img src="./images/组15.png" alt=""></div>
+            <div class="tupian">
+                <img src="./images/rwjs.png" alt="">
+            </div>
+            <div class="zhezhao"></div>
+        </div>
+        <!-- 场次 -->
+        <ul class="changci">
+            <li class="teshu"> <a href="" class="a1">场1</a>
+                <a href="" class="a2">K1-K2</a></li>
+            <li>
+                <a href="" class="a1 XZ1">场1</a>
+                <a href="" class="a2 XZ2">K1-K2</a>
+            </li>
+            <li> <a href="" class="a1">场1</a>
+                <a href="" class="a2">K1-K2</a></li>
+            <li> <a href="" class="a1">场1</a>
+                <a href="" class="a2">K1-K2</a></li>
+            <li> <a href="" class="a1">场1</a>
+                <a href="" class="a2">K1-K2</a></li>
+        </ul>
+        <!-- <div class="zhanshishijian">
+            <span class="ssq">本场拍卖</span>
+            <span class="ssq">剩余时间</span>
+            <span class="daojishi">08:33:48</span>
+            <span class="B1 B3">> 注册会员</span>
+            <span class="B2">提供手机号码提交短信验证码</span>
+            <span class="B1">> 缴纳保证金</span>
+            <span class="B2">保证金最低为1000人民币,数额随标的递增，可申请退回</span>
+            <span class="B1">> 参与竞拍</span>
+            <span class="B2">全球同步竞拍最高价者得标</span>
+            <span class="B1">> 完成付款</span>
+            <span class="B2">根据账单所示人民币金额
+                             于2工作日内完成付款</span>
+            <span class="B1">> 等待运输</span>
+            <span class="B2">由国际运输公司统一安排，
+                    运抵前一周联系鸽友告知提鸽信息</span>
+            <a href="" class="zuoyi">拍卖规则</a>
+            <a href="" class="yuoyi">帮助中心</a>
+        </div> -->
+        <div class="MGPMSS">
+            <ul>
+                <li class="zhanshishijian">
+                    <span class="ssq">本场拍卖</span>
+                    <span class="ssq">剩余时间</span>
+                    <span class="daojishi">08:33:48</span>
+                    <span class="B1 B3">> 注册会员</span>
+                    <span class="B2">提供手机号码提交短信验证码</span>
+                    <span class="B1">> 缴纳保证金</span>
+                    <span class="B2">保证金最低为1000人民币,数额随标的递增，可申请退回</span>
+                    <span class="B1">> 参与竞拍</span>
+                    <span class="B2">全球同步竞拍最高价者得标</span>
+                    <span class="B1">> 完成付款</span>
+                    <span class="B2">根据账单所示人民币金额
+                                         于2工作日内完成付款</span>
+                    <span class="B1">> 等待运输</span>
+                    <span class="B2">由国际运输公司统一安排，
+                                运抵前一周联系鸽友告知提鸽信息</span>
+                    <a href="" class="zuoyi">拍卖规则</a>
+                    <a href="" class="yuoyi">帮助中心</a>
+                </li>
+                <li class="li1 lis1">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis2">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis3">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis4">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis5">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis6">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：<span class="wode22">22:45:10</span></span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis7">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：<span class="wode22">22:45:10</span></span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis8">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：<span class="wode22">22:45:10</span></span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis9">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：<span class="wode22">22:45:10</span></span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+                <li class="li1 lis10">
+                    <span class="niaoming">好黑号外孙X好黑号直女</span>
+                    <img src="./images/niaogong.png" alt="" class="niaoren">
+                    <span class="RENMING">K1 B16-4254761</span>
+                    <div class="niaomao">
+                        <a href="./dzgzxx.html"><img src="./images/组 16.png" alt=""></a>
+                    </div>
+                    <span class="price">€  755,-</span>
+                    <span class="wode1">最新出价：佚名01</span>
+                    <span class="wode2">剩余时间：2天</span>
+                    <div class="SSSJ">立即出价</div>
+                    <div class="ZZPM_list_JG"> <img src="./images/组 15.png" alt=""> </div>
+                    <div class="SC"><img src="./images/fx.png" alt=""></div>
+                    <div class="QF"><img src="./images/Laag.png" alt=""></div>
+                    <!-- 隐藏信息框 -->
+                    <div class="YC hidden">
+                        <span class="MM">德拉帕世界铭鸽子</span>
+                        <span class="MM">DV01769-08-162</span>
+                        <p class="JS JLA">雄 “扑克脸”</p>
+                        <p class="JS">安德烈.德拉帕原舍世界铭鸽</p>
+                        <p class="JS">“冠军号×国家4号”直子</p>
+                        <p class="JS">“卡尔全兄弟”直子</p>
+                        <p class="JS">“皇室配对”直孙</p>
+                        <span class="qq dd">性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee dd">女</span><br/>
+                        <span class="qq">眼睛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">羽毛颜色</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">白色</span><br/>
+                        <span class="qq">尺寸</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">长度</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">中等</span><br/>
+                        <span class="qq">腰背</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">肌肉</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">平衡</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">耻骨</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">正常</span><br/>
+                        <span class="qq">羽毛</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ee">柔和</span><br/>
+                        <div class="cha"><img src="./images/cao.png" alt=""></div>
+                        <div class="xiasanjiaolan"><img src="./images/xiasanjiaolan.png" alt="" srcset=""></div>
+                    </div>
+                    <!--  -->
+                </li>
+            </ul>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="t3">
+                <div class="logos"><img src="./images/LG_EuropeanPigeonWebsite_diap.png" alt="" srcset=""></div>
+                <div class="lxwm">
+                    <span class="lxwms">联系我们</span>
+                    <p class="p11">电话（大陆） 010-85175305</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;13146616133</p>
+                    <p class="p3">邮件（大陆） EPW@xingezhan.com</p>
+                    <p class="p20">電話（臺灣） 0912-496-188</p>
+                    <p class="p3">電郵（臺灣） maggieku1219@gmail.com</p>
+                </div>
+                <div class="wx">
+                    <span>微信公众号</span>
+                    <img src="./images/wx.png" alt="">
+                </div>
+                <div class="xz">
+                    <span>下载APP</span>
+                    <img src="./images/wx.png" alt="">
+                </div>
+                <div class="jh">
+                    <span><img src="./images/pm.png" alt="">&nbsp;拍卖规则</span>
+                    <span class="span3"><img src="./images/fk.png" alt="">&nbsp;付款方式</span>
+                    <span class="span3"><img src="./images/gj.png" alt="">&nbsp;冠军计划</span>
+                </div>
+                <div class="liebiao">
+                    <ul>
+                        <li>关于我们</li>
+                        <li class="bor">服务条款</li>
+                        <li>帮助中心</li>
+                        <li class="bor">汇率查询</li>
+                        <li>联系EPW</li>
+                        <li class="bor">友情链接</li>
+                        <li>APP下载</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="shangbiao">
+            <span>© Copyright  2009 - 2018     |     all rights reserved     |     xingezhan.com</span>
+        </div>
+    </div>
+    <!-- 右侧导航 -->
+    <div class="FJ hidden" id="FJ">
+        <ul class="fj">
+            <li class="SUO" id="SUO">
+                <div class="suo"><img src="./images/suo.png" alt=""><span class="suos">登录</span></div>
+            </li>
+            <li class="APP">
+                <div class="app"><img src="./images/niao.png" alt=""><span class="apps">APP</span></div>
+            </li>
+            <li class="PHONE">
+                <div class="phone"><img src="./images/phone.png" alt=""><span class="phones">联系我们</span></div>
+            </li>
+            <li class="FEIJI" id="FB">
+                <div class="feiji"><img src="./images/fj.png" alt=""><span class="feijis">返回顶部</span></div>
+            </li>
+            <li class="guanbi" id="guanbi">
+                <div class="guanbis"><img src="./images/img602.png" alt="" srcset=""></div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

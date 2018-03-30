@@ -1,0 +1,147 @@
+@charset "utf-8";
+/*底部*/
+.footer{
+	width:1566px;
+	height:411px;
+	clear:both;
+}
+.footer .t1{
+	width:1566px;
+	height:37px;
+	background:#71C01C;
+}
+.footer .t2{
+	width:1566px;
+	height:37px;
+	background:#005D2B;
+}
+.footer .t3{
+	height:234px;
+	width:1566px;
+	background:#007CC7;
+	position:relative;
+	color:#ffffff;
+	padding:51px 0;
+}
+.footer .t3 .logos{
+	width:306px;
+	height:85px;
+	display:inline-block;
+	position:absolute;
+	top:36px;
+	left:62px; 
+}
+.footer .t3 .lxwm{
+	width:309px;  
+	height:167px;
+	position:absolute;
+	left:455px;
+	top:36px;
+}
+.footer .t3 .lxwm .lxwms{
+	font-size:20px;
+	font-weight: bolder;
+}
+.footer .t3 .lxwm p{
+	font-size:15px;
+	line-height:20px;
+}
+.p20{
+	margin-top:20px; 
+}
+.p11{
+	margin-top:11px;
+}
+.p3{
+	margin-top:8px;
+}
+
+.footer .t3 .wx{
+	width:140px; 
+	height:165px;
+	position:absolute;
+	top:36px;
+	left:864px;
+	text-align:center;
+}
+.footer .t3 .wx span{
+	width:140px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	font-size:20px;
+	font-weight: bolder;
+}
+.footer .t3 .wx img{
+	margin-top:11px;
+}
+.footer .t3 .xz{
+	width:140px; 
+	height:165px;
+	position:absolute;
+	top:36px;
+	left:1056px;
+	text-align:center;
+}
+.footer .t3 .xz span{
+	width:140px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	font-size:20px;
+	font-weight: bolder;
+}
+.footer .t3 .xz img{
+	margin-top:11px; 
+}
+.footer .t3 .jh{
+	width:139px; 
+	height:168px;
+	position:absolute;
+	top:36px;
+	right:106px;
+	font-size:19px;
+}
+.footer .t3 .jh span{
+	align-items: center;
+    justify-content: center;
+	text-align:center;
+	height:39px;
+	line-height:39px;
+	display:flex;
+}
+.footer .t3 .jh img{
+		vertical-align: middle;
+}
+.span3{
+	margin-top:20px;
+}
+.footer .t3 .liebiao{
+	width:660px;
+	height:20px;
+	margin:0 auto;
+	position:absolute;
+	bottom:23px;
+	left:432px;
+}
+.footer .t3 .liebiao ul{
+	width:660px;
+	height:20px;
+}
+.footer .t3 .liebiao ul li{
+	width:90px;
+	height:20px;
+	line-height:20px;
+	float:left;
+	font-size:14px;
+	text-align:center;
+}
+.bor{
+	border-right:1px solid #ffffff;
+	border-left:1px solid #ffffff;
+}
+.shangbiao{
+	width:1566px;
+	text-align:center;
+	font-size:14px;
+}

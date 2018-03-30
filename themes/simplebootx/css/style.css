@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+/**2018.3.13  zy**/
+body,div,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,img,a,input{margin:0; padding:0; border:0; list-style:none;}
+body{ background:#fff; font-family:"微软雅黑"; color:black; font-size:12px;/* background:url(../images/bg-body.jpg) no-repeat; background-size:100% 100%;*/}
+body,html{ -webkit-text-size-adjust:none; -ms-text-size-adjust:none; text-size-adjust:none;}
+a{ text-decoration:none;}
+a:hover{ text-decoration:underline; text-decoration:none;}
+.main{width:1566px;margin:0 auto;}
+.clearfloat{clear:both;height:0;} 
+html,body{ overflow-y:scroll;} 
+html,body{ overflow:scroll; min-height:101%;} 
+html{ overflow:-moz-scrollbars-vertical;} 
