@@ -12,7 +12,7 @@ class AssetController extends AdminbaseController {
     		exit("非法上传！");
     	}
     }
-    
+
     
     // 文件上传
     public function plupload(){
@@ -118,7 +118,7 @@ class AssetController extends AdminbaseController {
             $this->display(':plupload');
         }
     }
-    
-    
+
+
 
 }

@@ -15,26 +15,21 @@ class ImageadminController extends AdminbaseController
 
     // 后台拍卖管理列表
     public function imageindex(){
+        //获取目录路径
         $path = './data/upload/default/tupian/';
-        $result = $this->scanFile($path);
-        $this->assign('result',$result);
-        dump($result);
+        //取出该目录下所有的文件及目录
+        $result = scandir($path);
+        //删除目录
+        array_splice($result,0,2);
+        //分页
+        $count =count($result);
+        $page = $this->page($count, 2);
+        //获取每页显示的数据
+        $list=array_slice($result,$page->firstRow,$page->listRows);
+        $this->assign('result',$list);
+        //赋值分页输出
+        $this->assign("page", $page->show('Admin'));
         $this->display();
-    }
-
-    function scanFile($path) {
-        global $result;
-        $files = scandir($path);
-        foreach ($files as $file) {
-            if ($file != '.' && $file != '..') {
-                if (is_dir($path . '/' . $file)) {
-                    scanFile($path . '/' . $file);
-                } else {
-                    $result[] = basename($file);
-                }
-            }
-        }
-        return $result;
     }
     // 后台拍卖信鸽编辑
     public function imageedit()
