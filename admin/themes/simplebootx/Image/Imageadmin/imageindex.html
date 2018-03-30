@@ -29,41 +29,6 @@
 
         }, extra_params, 1, 'image', app);
     }
-
-    function open_upload_dialogs(dialog_title,callback,extra_params,multi,filetype,app){
-        console.log(111)
-        multi = multi?1:0;
-        filetype = filetype?filetype:'image';
-        app = app?app:GV.APP;
-        var params = '&multi='+multi+'&filetype='+filetype+'&app='+app ;
-        Wind.use("artDialog","iframeTools",function(){
-            art.dialog.open(GV.ROOT+'index.php?g=asset&m=asset&a=plupload'  + params, {
-
-                title: dialog_title,
-                id: new Date().getTime(),
-                width: '650px',
-                height: '420px',
-                lock: true,
-                fixed: true,
-                background:"#CCCCCC",
-                opacity:0,
-                ok: function() {
-                    if (typeof callback =='function') {
-                        var iframewindow = this.iframe.contentWindow;
-                        var files=iframewindow.get_selected_files();
-                        if(files){
-                            callback.apply(this, [this, files,extra_params]);
-                        }else{
-                            return false;
-                        }
-
-                    }
-                },
-                cancel: true
-            });
-            console.log(222)
-        });
-    }
     $(function() {
         $(".js-ajax-close-btn").on('click', function(e) {
             e.preventDefault();
