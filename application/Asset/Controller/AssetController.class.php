@@ -46,20 +46,34 @@ class AssetController extends AdminbaseController {
             }else{
                 $app= strtolower($app);
             }
-
-//			$savepath=$app.'/'.date('Ymd').'/';
-			$savepath=$app.'/'.'tupian' .'/';
-            //上传处理类
-            $config=array(
-            		'rootPath' => './'.C("UPLOADPATH"),
-            		'savePath' => $savepath,
-            		'maxSize' => $upload_max_filesize,
-//            		'saveName'   =>    array('uniqid',''),
+            $name = $_FILES['file']['name'];
+            $names = substr($name,-8);
+            if($names == '-eye.jpg'|| $names == 'geon.jpg'|| $names == 'stry.jpg'){
+                $savepath=$app.'/'.'tupian' .'/';
+                //上传处理类
+                $config=array(
+                    'rootPath' => './'.C("UPLOADPATH"),
+                    'savePath' => $savepath,
+                    'maxSize' => $upload_max_filesize,
                     'replace'   =>    true,
-            		'saveName'   =>    '',
-            		'exts'       =>    $all_allowed_exts,
-            		'autoSub'    =>    false,
-            );
+                    'saveName'   =>    '',
+                    'exts'       =>    $all_allowed_exts,
+                    'autoSub'    =>    false,
+                );
+            }else{
+                $savepath=$app.'/'.date('Ymd').'/';
+                //上传处理类
+                $config=array(
+                    'rootPath' => './'.C("UPLOADPATH"),
+                    'savePath' => $savepath,
+                    'maxSize' => $upload_max_filesize,
+            		'saveName'   =>    array('uniqid',''),
+                    'replace'   =>    true,
+                    'exts'       =>    $all_allowed_exts,
+                    'autoSub'    =>    false,
+                );
+            }
+//
 			$upload = new \Think\Upload($config);// 
 			$info=$upload->upload();
             //开始上传
